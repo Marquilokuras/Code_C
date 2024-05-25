@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> //code correcto 2 - 5 - 7 - 9
 
 int esCodigoCorrecto(int codigo[4]) {
 	int A = codigo[0];
@@ -31,7 +31,7 @@ int esCodigoCorrecto(int codigo[4]) {
 }
 
 int main() {
-	int codigo[4] = {0},intentos=0,acierto=0;
+	int codigo[4] = {0},intentos=0;
 	
 	do{
 		
@@ -42,8 +42,7 @@ int main() {
 			scanf("%d", &codigo[i]);
 		}
 		
-		if (esCodigoCorrecto(codigo)) {
-			acierto = 1;
+		if (esCodigoCorrecto(codigo)==1) {
 			printf("\nCODIGO CORRECTO\n");
 			break;
 		} else {
@@ -52,6 +51,10 @@ int main() {
 		}
 		
 	} while(intentos!=3);
+	
+	if(intentos==3){
+		printf("\nACCESO DENEGADO\n");
+	}
 	
 	return 0;
 }
